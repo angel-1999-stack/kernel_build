@@ -15,7 +15,7 @@ task:
       - sudo apt -y update
       - sudo apt-get -y install libncurses-dev gawk flex bison openssl libssl-dev dkms libelf-dev libudev-dev libpci-dev python python3 python-pip
       - git clone https://github.com/CraftRom/Chidori-Kernel_surya.git -b stable
-      - cd Chidori-Kernel_juice
+      - cd Chidori-Kernel_surya
       - chmod a+x build.sh
       - bash build.sh
       - export kernel=$(ls *.zip)
