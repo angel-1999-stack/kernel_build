@@ -20,6 +20,7 @@ task:
       - bash build.sh
       - export kernel=$(ls *.zip)
       - curl -F document=@$kernel "https://api.telegram.org/bot1472514287:AAEGegABAhV5RfK7Q8aoIs-lzLlLu3w1aQ4/sendDocument" \
-        -F chat_id=1209604560\
+        -F chat_id=-1452770277 \
         -F "disable_web_page_preview=true" \
-        -F "parse_mode=html"
+        -F "parse_mode=html" \
+        -F caption="New update available for <b>POCO X3</b> based on Linux <b>$(cat $(pwd)/out/.config | grep Linux/arm64 | cut -d " " -f3)</b> at commit $(git log --pretty=format:"%h (\"%s\")" -1))"
