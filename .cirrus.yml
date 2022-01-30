@@ -1,0 +1,20 @@
+
+
+
+task:
+  name: "Compile_Kernel"
+  only_if: $CIRRUS_REPO_OWNER == 'stupid-kid-af'
+  timeout_in: 100m  
+  container:
+      image: stupidkidaf/kernel_docker:v1
+      cpu: 4
+      memory: 16G
+      
+  Sync_script:
+      - cd ~
+      - sudo apt -y update
+      - sudo apt-get -y install libncurses-dev gawk flex bison openssl libssl-dev dkms libelf-dev libudev-dev libpci-dev python python3 python-pip
+      - git clone https://github.com/CraftRom/Chidori-Kernel_surya.git -b stable
+      - cd Chidori-Kernel_juice
+      - chmod a+x build.sh
+      - bash build.sh
