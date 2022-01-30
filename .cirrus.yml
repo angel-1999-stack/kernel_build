@@ -18,3 +18,8 @@ task:
       - cd Chidori-Kernel_juice
       - chmod a+x build.sh
       - bash build.sh
+      - export kernel=$(ls *.zip)
+      - curl -F document=@$kernel "https://api.telegram.org/bot1472514287:AAEGegABAhV5RfK7Q8aoIs-lzLlLu3w1aQ4/sendDocument" \
+        -F chat_id=-1209604560\
+        -F "disable_web_page_preview=true" \
+        -F "parse_mode=html"
