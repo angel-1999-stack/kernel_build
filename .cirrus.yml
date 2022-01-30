@@ -20,6 +20,6 @@ task:
       - bash build.sh
       - export kernel=$(ls *.zip)
       - export CHANNEL_ID="-1452770277"
-      - curl -F document=@$kernel "https://api.telegram.org/bot1472514287:AAEGegABAhV5RfK7Q8aoIs-lzLlLu3w1aQ4/sendDocument" \
+      - curl -F document=@"$kernel" "https://api.telegram.org/bot1472514287:AAEGegABAhV5RfK7Q8aoIs-lzLlLu3w1aQ4/sendDocument" \
         -F chat_id=$CHANNEL_ID \
         -F caption="Build Finished"
