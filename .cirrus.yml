@@ -3,7 +3,7 @@
 
 task:
   name: "Compile_Kernel"
-  only_if: $CIRRUS_REPO_OWNER == 'melles1991'
+  only_if: $CIRRUS_REPO_OWNER == 'CraftRom'
   timeout_in: 100m  
   container:
       cpu: 4
