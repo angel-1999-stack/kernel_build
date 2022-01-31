@@ -17,4 +17,4 @@ task:
       - git clone https://github.com/CraftRom/kernel_xiaomi_onclite.git -b eleven
       - cd kernel_xiaomi_onclite
       - chmod a+x build.sh
-      - bash build.sh
+      - bash build.sh -t
