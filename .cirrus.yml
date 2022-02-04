@@ -12,15 +12,12 @@ task:
       
   Sync_script:
       - cd ~
-      - sudo apt -y update
-      - sudo apt-get -y install libncurses-dev gawk flex bison openssl libssl-dev dkms libelf-dev libudev-dev libpci-dev python python3 python-pip
-      - git clone https://github.com/CraftRom/kernel_xiaomi_onclite.git -b eleven
-      - cd kernel_xiaomi_onclite
-      - chmod a+x build.sh
-      - bash build.sh -t
-      - cd ~ 
-      - rm -rf kernel_xiaomi_onclite
-      - git clone https://github.com/CraftRom/Chidori-Kernel_surya -b stable
-      - cd Chidori-Kernel_surya
-      - chmod a+x build.sh
-      - bash build.sh -t
+      - repo init -u https://github.com/CraftRom/kernel -b nightly
+      - repo sync
+      - for dev in onclite surya; do
+      - mkdir -p chidori/$dev
+      - (
+      - cd $chidori/$dev 
+      - bash build.sh -n -t
+      - )
+      - done
