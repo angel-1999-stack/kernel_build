@@ -16,7 +16,6 @@ txtrst=$(tput sgr0)
 
 DATE=$(date '+%Y-%m-%d  %H:%M')
 HOME_DIR="craftrom"
-TEST="buils.sh"
 
 # Telegram setup
 push_message() {
@@ -42,10 +41,6 @@ push_message "<b>Build bot is running.</b>
 <b>Date:</b> <code>$DATE</code>"
 
 echo -e "$blue    \nDownloading manifest and initialized repo.\n $nocol"
-push_document "$TEST" "<b>Kernel for <code>$device</code> compiled succesfully!</b>
-Total build time <b>((SECONDS / 60))</b> minute(s) and <b>((SECONDS % 60))</b> second(s) !
-
-#logs #$device "
 push_message "Downloading manifest and initialized repo"
 cd ~
 mkdir -p $HOME_DIR
@@ -67,7 +62,8 @@ push_message "<b>Start building kernel for <code>$device</code></b>
 <b>BuildDate:</b> <code>$BUILD_DATE</code>"
 	 cd ~/$HOME_DIR/chidori/$device 
 	 bash build.sh -n -t | tee $LOG
-push_document "$LOG" "<b>Kernel for <code>$device</code> compiled succesfully!</b>
+push_document "$LOG" "
+<b>Kernel for <code>$device</code> compiled succesfully!</b>
 Total build time <b>((SECONDS / 60))</b> minute(s) and <b>((SECONDS % 60))</b> second(s) !
 
 #logs #$device "
