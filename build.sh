@@ -52,7 +52,7 @@ for device in onclite surya; do
 
     mkdir -p ~/$HOME_DIR/chidori/$device
     
-    (
+(
 	echo -e "$blue    \nStarting kernel compilation for $device\n $nocol"
 	LOG="build-$device.log"
 	BUILD_DATE=$(date '+%Y-%m-%d  %H:%M')
@@ -66,4 +66,5 @@ push_document "$LOG" "
 Total build time <b>((SECONDS / 60))</b> minute(s) and <b>((SECONDS % 60))</b> second(s) !
 
 #logs #$device "
+)
 done
