@@ -36,7 +36,7 @@ push_document() {
         -F "disable_web_page_preview=true"
 }
 
-echo -e "$blue    \nStarting kernel compilation for $device\n $nocol"
+echo -e "$blue    \nDownloading manifest and initialized repo.\n $nocol"
 cd ~
 mkdir -p $HOME_DIR
 cd ~/$HOME_DIR
