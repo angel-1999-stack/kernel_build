@@ -48,8 +48,7 @@ cd ~/$HOME_DIR
 repo init -u https://github.com/CraftRom/kernel -b nightly
 repo sync
 
-
- for device in onclite surya; do
+for device in onclite surya; do
 
     mkdir -p ~/$HOME_DIR/chidori/$device
     
@@ -67,5 +66,4 @@ push_document "$LOG" "
 Total build time <b>((SECONDS / 60))</b> minute(s) and <b>((SECONDS % 60))</b> second(s) !
 
 #logs #$device "
-    
-  done
+done
