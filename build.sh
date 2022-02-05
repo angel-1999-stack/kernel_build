@@ -40,7 +40,10 @@ push_document() {
 push_message "<b>Build bot is running.</b>
 <b>Date:</b> <code>$DATE</code>"
 
-echo -e "$blue    \nDownloading manifest and initialized repo.\n $nocol"
+echo -e "$blue    \nDownloading manifest and initialized repo.\n $nocol" | tee $LOG
+push_document "$LOG" "<b>Kernel for <code>$device</code> compiled succesfully!</b>
+Total build time <b>((SECONDS / 60))</b> minute(s) and <b>((SECONDS % 60))</b> second(s) !</code>
+
 push_message "Downloading manifest and initialized repo"
 cd ~
 mkdir -p $HOME_DIR
