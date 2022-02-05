@@ -11,13 +11,4 @@ task:
       memory: 16G
       
   Sync_script:
-      - cd ~
-      - repo init -u https://github.com/CraftRom/kernel -b nightly
-      - repo sync
-      - for dev in onclite surya; do
-      - mkdir -p chidori/$dev
-      - (
-      - cd chidori/$dev 
-      - bash build.sh -n -t
-      - )
-      - done
+      - bash build.sh
