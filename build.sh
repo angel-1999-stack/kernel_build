@@ -64,7 +64,7 @@ push_message "<b>Start building kernel for <code>$device</code></b>
 	 bash build.sh -n -t | tee $LOG
 	push_document "$LOG" "#logs #$device "
 push_message "<b>Kernel for <code>$device</code> compiled succesfully!</b>
-Completed build <b>((SECONDS / 60))</b> minute(s) and <b>((SECONDS % 60))</b> second(s) !</code>"
+Total build time <b>((SECONDS / 60))</b> minute(s) and <b>((SECONDS % 60))</b> second(s) !</code>"
     )
     
   done
