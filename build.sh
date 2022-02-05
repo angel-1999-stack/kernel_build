@@ -14,6 +14,8 @@ nocol='\033[0m'
 txtbld=$(tput bold)
 txtrst=$(tput sgr0) 
 
+HOME_DIR="craftrom"
+
 # Telegram setup
 push_message() {
     curl -s -X POST \
@@ -34,25 +36,29 @@ push_document() {
         -F "disable_web_page_preview=true"
 }
 
-
-
+echo -e "$blue    \nStarting kernel compilation for $device\n $nocol"
+cd ~
+mkdir -p $HOME_DIR
+cd ~/$HOME_DIR
 repo init -u https://github.com/CraftRom/kernel -b nightly
 repo sync
 
 
  for device in onclite surya; do
 
-    mkdir -p chidori/$device
+    mkdir -p ~/$HOME_DIR/chidori/$device
+    
     (
 	echo -e "$blue    \nStarting kernel compilation for $device\n $nocol"
 	BUILD_DATE=$(date '+%Y-%m-%d  %H:%M')
 	 # Push message if build started
 	 push_message "<b>Start building kernel for <code>$device</code></b>
 	 <b>BuildDate:</b> <code>$BUILD_DATE</code>"
-    cd $chidori/$device 
-    bash build.sh -n -t
+	 cd ~/$HOME_DIR/chidori/$device 
+	 bash build.sh -n -t
 	
 	push_message "<b>Kernel for <code>$device</code> compiled succesfully!</b>
 	  Completed build <b>((SECONDS / 60))</b> minute(s) and <b>((SECONDS % 60))</b> second(s) !</code>"
     )
+    
   done
