@@ -62,9 +62,9 @@ push_message "<b>Start building kernel for <code>$device</code></b>
 <b>BuildDate:</b> <code>$BUILD_DATE</code>"
 	 cd ~/$HOME_DIR/chidori/$device 
 	 bash build.sh -n -t | tee $LOG
-	push_document "$LOG" "#logs #$device "
-push_message "<b>Kernel for <code>$device</code> compiled succesfully!</b>
-Total build time <b>((SECONDS / 60))</b> minute(s) and <b>((SECONDS % 60))</b> second(s) !</code>"
+push_document "$LOG" "<b>Kernel for <code>$device</code> compiled succesfully!</b>
+Total build time <b>((SECONDS / 60))</b> minute(s) and <b>((SECONDS % 60))</b> second(s) !</code>
+#logs #$device "
     )
     
   done
