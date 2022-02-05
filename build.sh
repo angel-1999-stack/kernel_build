@@ -37,7 +37,7 @@ push_document() {
         -F "disable_web_page_preview=true"
 }
 
-push_message "<b>Build bot is running.</b>
+push_message "<b>Build bot is running. $((SECONDS / 60))</b>
 <b>Date:</b> <code>$DATE</code>"
 
 echo -e "$blue    \nDownloading manifest and initialized repo.\n $nocol"
@@ -63,7 +63,7 @@ push_message "<b>Start building kernel for <code>$device</code></b>
 	 bash build.sh -n -t | tee $LOG
 push_document "$LOG" "
 <b>Kernel for <code>$device</code> compiled succesfully!</b>
-Total build time <b>((SECONDS / 60))</b> minute(s) and <b>((SECONDS % 60))</b> second(s) !
+Total build time <b>$((SECONDS / 60))</b> minute(s) and <b>$((SECONDS % 60))</b> second(s) !
 
 #logs #$device "
 )
