@@ -14,6 +14,7 @@ nocol='\033[0m'
 txtbld=$(tput bold)
 txtrst=$(tput sgr0) 
 
+DATE=$(date '+%Y-%m-%d  %H:%M')
 HOME_DIR="craftrom"
 
 # Telegram setup
@@ -36,7 +37,11 @@ push_document() {
         -F "disable_web_page_preview=true"
 }
 
+push_message "<b>Build bot is running.</b>
+	 <b>Date:</b> <code>$DATE</code>"
+
 echo -e "$blue    \nDownloading manifest and initialized repo.\n $nocol"
+push_message "<b>Downloading manifest and initialized repo</b>"
 cd ~
 mkdir -p $HOME_DIR
 cd ~/$HOME_DIR
