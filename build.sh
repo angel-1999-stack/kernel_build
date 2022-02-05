@@ -61,12 +61,12 @@ repo sync
 	LOG="build-$device.log"
 	BUILD_DATE=$(date '+%Y-%m-%d  %H:%M')
 	 # Push message if build started
-push_message "<b>Start building kernel for <code>$device</code></b>
+push_message "<b>Start building kernel</b> for <code>$device</code>
 <b>BuildDate:</b> <code>$BUILD_DATE</code>"
 	 cd ~/$HOME_DIR/chidori/$device 
 	 bash build.sh -n -t | tee $LOG
-push_document "$LOG" "<b>Kernel for <code>$device</code> compiled succesfully!</b>
-Total build time <b>((SECONDS / 60))</b> minute(s) and <b>((SECONDS % 60))</b> second(s) !</code>
+push_document "$LOG" "<b>Kernel</b> for <code>$device</code> <b>compiled succesfully!</b>
+Total build time <b>((SECONDS / 60))</b> minute(s) and <b>((SECONDS % 60))</b> second(s) !
 #logs #$device "
     )
     
