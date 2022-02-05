@@ -37,7 +37,7 @@ push_document() {
         -F "disable_web_page_preview=true"
 }
 
-push_message "<b>Build bot is running. $((SECONDS / 60))</b>
+push_message "<b>Build bot is running. $((SECONDS / 60)):$((SECONDS % 60))</b>
 <b>Date:</b> <code>$DATE</code>"
 
 echo -e "$blue    \nDownloading manifest and initialized repo.\n $nocol"
