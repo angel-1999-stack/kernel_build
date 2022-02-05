@@ -38,10 +38,10 @@ push_document() {
 }
 
 push_message "<b>Build bot is running.</b>
-	 <b>Date:</b> <code>$DATE</code>"
+<b>Date:</b> <code>$DATE</code>"
 
 echo -e "$blue    \nDownloading manifest and initialized repo.\n $nocol"
-push_message "<b>Downloading manifest and initialized repo</b>"
+push_message "Downloading manifest and initialized repo"
 cd ~
 mkdir -p $HOME_DIR
 cd ~/$HOME_DIR
@@ -55,15 +55,16 @@ repo sync
     
     (
 	echo -e "$blue    \nStarting kernel compilation for $device\n $nocol"
+	LOG="build-$device.log"
 	BUILD_DATE=$(date '+%Y-%m-%d  %H:%M')
 	 # Push message if build started
-	 push_message "<b>Start building kernel for <code>$device</code></b>
-	 <b>BuildDate:</b> <code>$BUILD_DATE</code>"
+push_message "<b>Start building kernel for <code>$device</code></b>
+<b>BuildDate:</b> <code>$BUILD_DATE</code>"
 	 cd ~/$HOME_DIR/chidori/$device 
-	 bash build.sh -n -t
-	
-	push_message "<b>Kernel for <code>$device</code> compiled succesfully!</b>
-	  Completed build <b>((SECONDS / 60))</b> minute(s) and <b>((SECONDS % 60))</b> second(s) !</code>"
+	 bash build.sh -n -t | tee $LOG
+	push_document "$LOG" "#logs #$device "
+push_message "<b>Kernel for <code>$device</code> compiled succesfully!</b>
+Completed build <b>((SECONDS / 60))</b> minute(s) and <b>((SECONDS % 60))</b> second(s) !</code>"
     )
     
   done
