@@ -7,8 +7,8 @@ task:
   timeout_in: 100m  
   container:
       image: stupidkidaf/kernel_docker:v1
-      cpu: 4
-      memory: 16G
+      cpu: 32
+      memory: 64G
       
   Sync_script:
       - bash build.sh
