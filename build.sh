@@ -39,14 +39,7 @@ push_document() {
 
 push_message "<b>Build bot is running.</b>
 <b>Date:</b> <code>$DATE</code>"
-
-echo -e "$blue    \nDownloading manifest and initialized repo.\n $nocol"
-push_message "Downloading manifest and initialized repo"
-cd ~
-mkdir -p $HOME_DIR
 cd ~/$HOME_DIR
-repo init -u https://github.com/CraftRom/kernel -b nightly
-repo sync
 
 for device in onclite surya; do
 
