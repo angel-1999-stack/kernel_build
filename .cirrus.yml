@@ -10,3 +10,4 @@ task:
   Sync_script:
       - bash sync.sh
       - bash build.sh
+
