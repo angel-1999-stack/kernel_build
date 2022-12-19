@@ -1,16 +1,4 @@
 task:
-  name: "chidori-sync"
-  only_if: $CIRRUS_REPO_OWNER == 'CraftRom'
-  timeout_in: 100m  
-  container:
-      image: stupidkidaf/kernel_docker:v1
-      cpu: 8
-      memory: 16G
-      
-  Sync_script:
-      - bash sync.sh
-
-task:
   name: "chidori-build"
   only_if: $CIRRUS_REPO_OWNER == 'CraftRom'
   timeout_in: 100m  
@@ -20,4 +8,5 @@ task:
       memory: 16G
       
   Sync_script:
+      - bash sync.sh
       - bash build.sh
