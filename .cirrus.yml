@@ -1,13 +1,19 @@
+env:
+    # Cirrus Specific Vars (Do *NOT* Change)
+    CIRRUS_SHELL: bash
+    
 task:
   name: "chidori-build"
   only_if: $CIRRUS_REPO_OWNER == 'CraftRom'
-  timeout_in: 100m  
+  timeout_in: 120m
   container:
-      image: stupidkidaf/kernel_docker:v1
+      image: ghcr.io/sushrut1101/docker:arch
       cpu: 8
-      memory: 16G
+      memory: 20G
       
-  Sync_script:
+ Sync_script:
       - bash sync.sh
+
+ Build_script:
       - bash build.sh
 
