@@ -14,4 +14,3 @@ task:
       - bash sync.sh
   Build_script:
       - bash build.sh
-
