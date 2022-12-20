@@ -11,9 +11,9 @@ env:
 task:
   name: "chidori-build"
   only_if: $CIRRUS_REPO_OWNER == 'CraftRom'
-  timeout_in: 2m
+  timeout_in: 1m
   container:
-    image: 31482281/ubuntu:latest
+    image: stupidkidaf/kernel_docker:v1
     cpu: 8
     memory: 32G
   Sync_script:
