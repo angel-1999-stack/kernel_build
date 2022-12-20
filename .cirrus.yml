@@ -20,7 +20,8 @@ task:
         image: apon77/aosp:cirrus
         cpu: 2
         memory: 4G
-
+  env_script:
+    - env
   Sync_script:
       - bash sync.sh
     
