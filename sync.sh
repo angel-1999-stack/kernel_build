@@ -27,9 +27,10 @@ push_message() {
         -d "disable_web_page_preview=true"
 }
 
-push_message "<b>Build bot is running.</b>
+push_message "<b>Build Chidori bot is running.</b>
 <b>Date:</b> <code>$DATE</code>"
-
+cd ~ && sudo apt install git axel -y && git clone https://github.com/CraftRom/scripts && cd scripts && sudo bash setup/android_build_env.sh && sudo bash setup/install_android_sdk.sh
+cd ~
 echo -e "$blue    \nDownloading manifest and initialized repo.\n $nocol"
 push_message "Downloading manifest and initialized repo"
 cd ~
