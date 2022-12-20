@@ -7,7 +7,7 @@ task:
   only_if: $CIRRUS_REPO_OWNER == 'CraftRom'
   timeout_in: 120m
   container:
-      image: ghcr.io/sushrut1101/docker:arch
+      image: registry.gitlab.com/sushrut1101/docker:latest
       cpu: 8
       memory: 20G
   Sync_script:
