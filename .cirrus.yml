@@ -11,7 +11,6 @@ env:
 task:
   name: "chidori-build"
   only_if: $CIRRUS_REPO_OWNER == 'CraftRom'
-  timeout_in: 120m
   container:
       image: registry.gitlab.com/sushrut1101/docker:latest
       cpu: 8
