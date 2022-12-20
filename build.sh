@@ -39,11 +39,11 @@ push_document() {
 
 push_message "<b>Build bot is running.</b>
 <b>Date:</b> <code>$DATE</code>"
-cd ~/$HOME_DIR
+cd $HOME/$HOME_DIR
 
 for device in onclite surya; do
 
-    mkdir -p ~/$HOME_DIR/chidori/$device
+    mkdir -p $HOME/$HOME_DIR/chidori/$device
     
 (
 	echo -e "$blue    \nStarting kernel compilation for $device\n $nocol"
@@ -52,7 +52,7 @@ for device in onclite surya; do
 	 # Push message if build started
 push_message "<b>Start building kernel for <code>$device</code></b>
 <b>BuildDate:</b> <code>$BUILD_DATE</code>"
-	 cd ~/$HOME_DIR/chidori/$device 
+	 cd $HOME/$HOME_DIR/chidori/$device 
 	 bash build.sh -n -l | tee $LOG
 push_document "$LOG" "
 <b>Kernel for <code>$device</code> compiled succesfully!</b>
