@@ -14,7 +14,7 @@ task:
   container:
       image: registry.gitlab.com/sushrut1101/docker:latest
       cpu: 8
-      memory: 32G
+      memory: 20G
   Sync_script:
       - bash sync.sh
   Build_script:
