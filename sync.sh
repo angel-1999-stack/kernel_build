@@ -29,12 +29,11 @@ push_message() {
 
 push_message "<b>Build Chidori bot is running.</b>
 <b>Date:</b> <code>$DATE</code>"
-cd ~ && sudo apt install git axel -y && git clone https://github.com/CraftRom/scripts && cd scripts && sudo bash setup/android_build_env.sh && sudo bash setup/install_android_sdk.sh
-cd ~
+cd $HOME && sudo apt install git axel -y && git clone https://github.com/CraftRom/scripts && cd scripts && sudo bash setup/android_build_env.sh
 echo -e "$blue    \nDownloading manifest and initialized repo.\n $nocol"
 push_message "Downloading manifest and initialized repo"
-cd ~
+cd $HOME
 mkdir -p $HOME_DIR
-cd ~/$HOME_DIR
+cd $HOME/$HOME_DIR
 repo init -u https://github.com/CraftRom/kernel -b nightly
 repo sync --detach --current-branch --no-tags --force-remove-dirty --force-sync
