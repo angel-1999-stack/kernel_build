@@ -27,6 +27,8 @@ task:
 task:
   name: "chidori-build"
   only_if: $CIRRUS_REPO_OWNER == 'CraftRom'
+  depends_on:
+    - Sync
   timeout_in: 4h
   persistent_worker:
     labels:
