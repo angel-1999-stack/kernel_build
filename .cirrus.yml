@@ -14,8 +14,8 @@ task:
   timeout_in: 2m
   container:
     image: apon77/aosp:cirrus
-    cpu: 24
-    memory: 120G
+    cpu: 8
+    memory: 32G
   Sync_script:
       - bash sync.sh
   Build_script:
