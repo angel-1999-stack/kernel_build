@@ -17,7 +17,7 @@ task:
       name: AX61-2
     isolation:
       container:
-        image: apon77/aosp:cirrus
+        image: stupidkidaf/kernel_docker:v1
         cpu: 2
         memory: 4G
   env_script:
@@ -36,7 +36,7 @@ task:
       name: AX61-1
     isolation:
       container:
-        image: apon77/aosp:cirrus
+        image: stupidkidaf/kernel_docker:v1
         cpu: 24
         memory: 120G
   Build_script:
