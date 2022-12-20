@@ -21,7 +21,6 @@ task:
         image: apon77/aosp:cirrus
         cpu: 24
         memory: 120G
-        volumes:
   Sync_script:
       - bash sync.sh
   Build_script:
