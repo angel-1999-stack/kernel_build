@@ -10,8 +10,6 @@ env:
     
 task:
   name: "chidori-build"
-  depends_on:
-  - Test
   only_if: $CIRRUS_REPO_OWNER == 'CraftRom'
   persistent_worker:
     labels:
