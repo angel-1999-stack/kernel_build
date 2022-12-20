@@ -10,11 +10,18 @@ env:
     
 task:
   name: "chidori-build"
+  depends_on:
+  - Test
   only_if: $CIRRUS_REPO_OWNER == 'CraftRom'
-  container:
-      image: 31482281/ubuntu:latest
-      cpu: 8
-      memory: 20G
+  persistent_worker:
+    labels:
+      name: BUILD
+    isolation:
+      container:
+        image: apon77/aosp:cirrus
+        cpu: 24
+        memory: 120G
+        volumes:
   Sync_script:
       - bash sync.sh
   Build_script:
