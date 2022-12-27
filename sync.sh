@@ -15,7 +15,7 @@ txtbld=$(tput bold)
 txtrst=$(tput sgr0) 
 
 DATE=$(date '+%Y-%m-%d  %H:%M')
-HOME_DIR="craftrom"
+HOME_DIR="miui-kernel"
 
 # Telegram setup
 push_message() {
@@ -27,7 +27,7 @@ push_message() {
         -d "disable_web_page_preview=true"
 }
 
-push_message "<b>Build Chidori bot is running.</b>
+push_message "<b>Build MIUI-Kernel bot is running.</b>
 <b>Date:</b> <code>$DATE</code>"
 cd $HOME && sudo apt-get install git -y && git clone https://github.com/CraftRom/scripts && cd scripts && sudo bash setup/android_build_env.sh
 echo -e "$blue    \nDownloading manifest and initialized repo.\n $nocol"
@@ -35,5 +35,5 @@ push_message "Downloading manifest and initialized repo"
 cd $HOME
 mkdir -p $HOME_DIR
 cd $HOME/$HOME_DIR
-repo init -u https://github.com/CraftRom/kernel -b stable
+repo init -u https://github.com/miui-kernel/kernel -b onclite
 repo sync --detach --current-branch --no-tags --force-remove-dirty --force-sync
