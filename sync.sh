@@ -35,6 +35,5 @@ push_message "Downloading manifest and initialized repo"
 cd $HOME
 mkdir -p $HOME_DIR
 cd $HOME/$HOME_DIR
-repo init -u https://github.com/miui-kernel/kernel -b onclite
+repo init -u https://github.com/MIUI-Kernel/Zeus_kernel_onclite -b onclite
 repo sync --detach --current-branch --no-tags --force-remove-dirty --force-sync
-
