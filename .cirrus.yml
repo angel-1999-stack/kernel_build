@@ -26,7 +26,7 @@ task:
       - bash sync.sh
     
 task:
-  name: "chidori-build"
+  name: "miui-kernel-build"
   only_if: $CIRRUS_REPO_OWNER == 'MIUI-Kernel'
   depends_on:
     - Sync
