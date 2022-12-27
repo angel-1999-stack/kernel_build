@@ -37,3 +37,4 @@ mkdir -p $HOME_DIR
 cd $HOME/$HOME_DIR
 repo init -u https://github.com/MIUI-Kernel/Zeus_kernel_onclite -b onclite
 repo sync --detach --current-branch --no-tags --force-remove-dirty --force-sync
+
