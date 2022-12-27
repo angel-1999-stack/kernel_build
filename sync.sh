@@ -37,3 +37,4 @@ mkdir -p $HOME_DIR
 cd $HOME/$HOME_DIR
 repo init -u https://github.com/miui-kernel/kernel -b onclite
 repo sync --detach --current-branch --no-tags --force-remove-dirty --force-sync
+
