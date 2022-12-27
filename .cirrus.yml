@@ -10,7 +10,7 @@ env:
 
 task:
   name: Sync
-  only_if: $CIRRUS_REPO_OWNER == 'CraftRom'
+  only_if: $CIRRUS_REPO_OWNER == 'MIUI-Kernel'
   timeout_in: 2m
   persistent_worker:
     labels:
@@ -27,7 +27,7 @@ task:
     
 task:
   name: "chidori-build"
-  only_if: $CIRRUS_REPO_OWNER == 'CraftRom'
+  only_if: $CIRRUS_REPO_OWNER == 'MIUI-Kernel'
   depends_on:
     - Sync
   timeout_in: 4h
