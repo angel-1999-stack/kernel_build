@@ -15,7 +15,7 @@ txtbld=$(tput bold)
 txtrst=$(tput sgr0) 
 
 DATE=$(date '+%Y-%m-%d  %H:%M')
-HOME_DIR="craftrom"
+HOME_DIR="miui-kernel"
 
 # Telegram setup
 push_message() {
@@ -41,9 +41,9 @@ push_message "<b>Build bot is running.</b>
 <b>Date:</b> <code>$DATE</code>"
 cd $HOME/$HOME_DIR
 
-for device in onclite surya; do
+for device in onclite; do
 
-    mkdir -p $HOME/$HOME_DIR/chidori/$device
+    mkdir -p $HOME/$HOME_DIR/miui-kernel/$device
     
 (
 	echo -e "$blue    \nStarting kernel compilation for $device\n $nocol"
@@ -52,7 +52,7 @@ for device in onclite surya; do
 	 # Push message if build started
 push_message "<b>Start building kernel for <code>$device</code></b>
 <b>BuildDate:</b> <code>$BUILD_DATE</code>"
-	 cd $HOME/$HOME_DIR/chidori/$device 
+	 cd $HOME/$HOME_DIR/miui-kernel/$device 
 	 bash build.sh -n -l | tee $LOG
 push_document "$LOG" "
 <b>Kernel for <code>$device</code> compiled succesfully!</b>
